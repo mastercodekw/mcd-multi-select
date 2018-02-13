@@ -32,8 +32,9 @@ Your application is already set up to be tested via [web-component-tester](https
 ```
 
 ### Attributes
+
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --------- | ----------- | ---- | ------- |
 | `opened` | Whether the dialog is opened or not | Boolean | false |
 | `label` | The label to be shown to user | String | Label |
 | `placeholder` | The placeholder to be shown to user in case he didn't select any item | String | - |
@@ -50,7 +51,7 @@ Your application is already set up to be tested via [web-component-tester](https
 The following custom properties and mixins are available for styling:
 
 | Custom property | Description | Default |
-| --- | --- | --- |
+| --------------- | ----------- | ------- |
 | `--mcd-multi-select-selection` | Mixin applied to each selection of the selected items | {} |
 | `--mcd-multi-select-label ` | Mixin applied to label | {} |
 | `--mcd-multi-select-placeholder` | Mixin applied to placeholder | {} |
