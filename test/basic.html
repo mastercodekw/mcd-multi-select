@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>mcd-multi-select test</title>
+
+    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+    
+    <link rel="import" href="../mcd-multi-select.html">
+  </head>
+  <body>
+    <test-fixture id="BasicFixture">
+      <template>
+        <mcd-multi-select></mcd-multi-select>
+      </template>
+    </test-fixture>
+    
+    <script>
+      suite('mcd-multi-select', () => {
+        var basicFixture, multiselect;
+
+        setup(() => {
+          basicFixture = fixture('BasicFixture');
+          multiselect = document.querySelector('mcd-multi-select');
+        });
+        
+        test('instantiating mcd-multi-select.', () => {
+          assert.equal(MCDMultiSelect.is, 'mcd-multi-select');
+        });
+
+        test('Opening and closing the selections dialog', () => {
+          assert.equal(multiselect.opened, false, 'The selections dialog is shown when the element instantiated.');
+
+          multiselect.open();
+          assert.equal(basicFixture.opened, true);
+
+          multiselect.close();
+          assert.equal(multiselect.opened, false);
+        });
+
+        test('Filtering array of objects', function(done) {
+          multiselect.set('items', ['a', 'b', 'c']);
+          Polymer.Async.microTask.run(function() {
+            var arr = multiselect.shadowRoot.querySelectorAll('paper-checkbox');
+            assert.equal(arr.length, 3);
+            
+            multiselect.set('filterValue', 'b');
+            Polymer.Async.microTask.run(function() {
+              var arr = multiselect.shadowRoot.querySelectorAll('paper-checkbox');
+              assert.equal(arr.length, 1);
+              assert.equal(arr[0].value, 'b');
+              done();
+            });
+          });
+        });
+
+        test('Toggle selections', function(done) {
+          multiselect.set('items', ['a', 'b', 'c']);
+          Polymer.Async.microTask.run(function() {
+            multiselect.toggleButtonClicked();
+            Polymer.Async.microTask.run(function() {
+              assert.deepEqual(multiselect.selected, multiselect.items);
+              
+              multiselect.toggleButtonClicked();
+              Polymer.Async.microTask.run(function() {
+                assert.deepEqual(multiselect.selected, []);
+                done();
+              });
+            });
+          });
+        });
+      });
+    </script>
+
+  </body>
+</html>

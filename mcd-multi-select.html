@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="mcd-multi-select">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * `mcd-multi-select`
+     * Web component that enables multi-selection from a given set of items.
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class McdMultiSelect extends Polymer.Element {
+      static get is() { return 'mcd-multi-select'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'mcd-multi-select'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(McdMultiSelect.is, McdMultiSelect);
+  </script>
+</dom-module>

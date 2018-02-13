@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>mcd-multi-select demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="../../polymer/polymer.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../mcd-multi-select.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles"></style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <mcd-multi-select-demo id="demo1">
+        <h3>Basic mcd-multi-select demo</h3>
+        <demo-snippet>
+          <template>
+            <mcd-multi-select
+              label="Favorites"
+              items="[[items]]">
+            </mcd-multi-select>
+          </template>
+        </demo-snippet>
+      </mcd-multi-select-demo>
+      
+      <mcd-multi-select-demo id="demo2">
+        <h3>Support right-to-left languages</h3>
+        <demo-snippet id="demo2">
+          <template>
+            <mcd-multi-select
+              label="المفضلة"
+              items="[[items]]"
+              placeholder="اختر الطعام المفضل لديك..."
+              filter-placeholder='ابحث...'
+              dismiss-title='إخفاء'
+              toggle-title='تبديل الكل'
+              rtl>
+            </mcd-multi-select>
+          </template>
+        </demo-snippet>
+      </mcd-multi-select-demo>      
+    </div>
+    
+    <script>
+      class MCDMultiSelectDemo extends Polymer.Element {
+        static get is() { return 'mcd-multi-select-demo' }
+
+        static get items() {
+          return [
+            'Apple','Apricot','Avocado','Banana','Blackberry',
+            'Blueberry','Cherry','Coconut','Cranberry','Cucumber',
+            'Grape','Grapefruit','Guava','Jackfruit','Lemon',
+            'Mango','Olive','Orange','Peach','Pineapple',
+            'Pomegranate','Pomelo','Raspberry','Strawberry'
+          ]
+        }
+        
+        static get itemsAR() {
+          return [
+            'تفاح','مشمش','أفوكادو','موز','بلاك بيري',
+            'توت بري','كرز','جوز الهند','توت بري','خيار',
+            'عنب','جريب فروت','جوافة','الجاك فروت','ليمون',
+            'مانجو','زيتون','برتقال','خوخ','أناناس','رمان',
+            'بوميلي','العليق','فراولة'
+          ]
+        }
+      }
+
+      window.customElements.define(MCDMultiSelectDemo.is, MCDMultiSelectDemo);      
+      
+      // Basic Demo
+      const demo1 = document.querySelector('#demo1');
+      const multiselect = demo1.querySelector('mcd-multi-select');
+      multiselect.items = MCDMultiSelectDemo.items;
+
+      // RTL Demo
+      const demo2 = document.querySelector('#demo2');
+      const multiselectRTL = demo2.querySelector('mcd-multi-select');
+      multiselectRTL.items = MCDMultiSelectDemo.itemsAR;
+    </script>
+  </body>
+</html>
