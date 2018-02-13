@@ -2,24 +2,6 @@
 
 Web component that enables multi-selection from a given set of items.
 
-## Install the Polymer-CLI
-
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your element locally.
-
-## Viewing Your Element
-
-```
-$ polymer serve
-```
-
-## Running Tests
-
-```
-$ polymer test
-```
-
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
-
 ## Usage
 
 `<mcd-multi-select>` enables multi-selection from a given set of items. You can use the `selected-items` attribute to retrieve the items selected by user.
@@ -61,6 +43,24 @@ The following custom properties and mixins are available for styling:
 | `--mcd-multi-select-toggle` | Mixin applied to the toggle button | {} |
 | `--mcd-multi-select-toggle-focus` | Mixin applied to the toggle button when it is focused using the keyboard | {} |
 | `--mcd-multi-select-toggle-hover` | Mixin applied to the toggle button when it is hovered | {} |
+
+## Install the Polymer-CLI
+
+First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your element locally.
+
+## Viewing Your Element
+
+```
+$ polymer serve
+```
+
+## Running Tests
+
+```
+$ polymer test
+```
+
+Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
 
 ## License
 
