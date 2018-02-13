@@ -1,3 +1,5 @@
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/mastercodekw/mcd-multi-select)
+
 # \<mcd-multi-select\>
 
 Web component that enables multi-selection from a given set of items.
