@@ -22,7 +22,7 @@
 | `placeholder` | The placeholder to be shown to user in case he didn't select any item | String | - |
 | `items` | Array containing selections to be shown to user | Array | - |
 | `selected-items` | Array of selected items made by the user | Array | - |
-| `prop` | Property shall be used for each item in case the user passed an array of objects | String | - |
+| `valueProperty` | Value property to be used for each item, in case the user passed an array of objects | String | - |
 | `filter-placeholder` | Placeholder for the filtering input field | String | Search... |
 | `dismiss-title` | Title of the dismiss button | String | Dismiss |
 | `toggle-title` | Title of the toggle-all button | String | Toggle All |
@@ -33,7 +33,7 @@
 The following custom properties and mixins are available for styling:
 
 | Custom property | Description | Default |
-| --- | --- | --- |
+| --------------- | ----------- | ------- |
 | `--mcd-multi-select-selection` | Mixin applied to each selection of the selected items | {} |
 | `--mcd-multi-select-label ` | Mixin applied to label | {} |
 | `--mcd-multi-select-placeholder` | Mixin applied to placeholder | {} |
@@ -365,8 +365,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
               value: []
             },
 
-            /** Property shall be used for each item in case the user passed an array of objects. */
-            prop: {
+            /**
+             * Value property to be used for each item, in case the user passed an array of objects.
+             */
+            valueProperty: {
               type: String,
               value: 'value'
             },
@@ -513,7 +515,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
         /** Gets the value of the given item. */
         getValue(i) {
-          return (typeof i === 'object') ? i[this.prop] : i;
+          return (typeof i === 'object') ? i[this.valueProperty] : i;
         }
         
         /**
