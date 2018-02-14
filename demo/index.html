@@ -27,6 +27,15 @@
               label="Favorites"
               items="[[items]]">
             </mcd-multi-select>
+
+            <paper-button id="button" onclick="getSelected()" style="margin:8px 0 14px" raised>Get Selected</paper-button>
+            <div id="items"></div>
+            <script>
+              function getSelected() {
+                console.dir(multiselectBasic.value);
+                document.getElementById('items').innerHTML = JSON.stringify(multiselectBasic.value);
+              }
+            </script>
           </template>
         </demo-snippet>
       </mcd-multi-select-demo>
@@ -78,8 +87,8 @@
       
       // Basic Demo
       const demo1 = document.querySelector('#demo1');
-      const multiselect = demo1.querySelector('mcd-multi-select');
-      multiselect.items = MCDMultiSelectDemo.items;
+      const multiselectBasic = demo1.querySelector('mcd-multi-select');
+      multiselectBasic.items = MCDMultiSelectDemo.items;
 
       // RTL Demo
       const demo2 = document.querySelector('#demo2');

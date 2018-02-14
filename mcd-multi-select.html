@@ -344,7 +344,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
               value: false
             },
             
-            /** The label for the dropdown. */
+            /** The label to be shown to user. */
             label: {
               type: String,
               value: 'Label'
@@ -463,6 +463,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
           Polymer.Async.timeOut.run(function() {
             this.$.dialog.style.visibility = "hidden";
           }.bind(this), this._animationDuration);
+        }
+
+        /** Retrieve the selected items. */
+        get value() {
+          return this.selectedItems;
         }
 
         /** Called every time the selected items changed to show or hide the placeholder. */

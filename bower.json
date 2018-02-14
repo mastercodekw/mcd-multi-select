@@ -1,5 +1,6 @@
 {
   "name": "mcd-multi-select",
+  "authors": ["Mohammed ALSarraf <info@mastercodekw.com>"],
   "description": "Web component that enables multi-selection from a given set of items.",
   "main": "mcd-multi-select.html",
   "dependencies": {
@@ -10,7 +11,8 @@
     "paper-checkbox": "PolymerElements/paper-checkbox/paper-checkbox#^2.0.2",
     "paper-button": "PolymerElements/paper-button/paper-button#^2.0.0",
     "paper-input": "PolymerElements/paper-input#^2.1.1",
-    "iron-icons": "PolymerElements/iron-icons#^2.0.1"
+    "iron-icons": "PolymerElements/iron-icons#^2.0.1",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0"
   },
   "devDependencies": {
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
