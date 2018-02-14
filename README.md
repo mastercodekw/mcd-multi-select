@@ -6,13 +6,10 @@ Web component that enables multi-selection from a given set of items.
 
 ## Usage
 
-`<mcd-multi-select>` enables multi-selection from a given set of items. You can use the `selected-items` attribute to retrieve the items selected by user.
+`<mcd-multi-select>` enables multi-selection from a given set of items. You can use the `selected-items` attribute to data-bind the items selected by the user, or simply use the `value` property to retrieve them.
 
 ```html
-<mcd-multi-select 
-	source="{{items}}"
-	selected-items="{{selectedItems}}">
-</mcd-multi-select>
+<mcd-multi-select items="{{items}}"></mcd-multi-select>
 ```
 
 ### Attributes
