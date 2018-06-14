@@ -376,7 +376,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             /** Array of selected items made by the user */
             selectedItems: {
               type: Array,
-              value: []
+              value: [],
+              notify: true
             },
 
             /** Value used to filter data. */
@@ -490,7 +491,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
           if (this.selectedItems.length === this.items.length) {
             this.set("selectedItems", []);
           } else {
-            this.set("selectedItems", this.items);
+            this.set("selectedItems", [].concat(this.items));
           }
 
           if (this.filterValue != "") {
